@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Wisata Gunung Kidul</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        main{
+            min-height: calc(100vh - 400px);
+            padding: 40px 0;
+        }
+
+        .contact-section{
+            background: white;
+            padding: 40px;
+            border-radius: 20px 0 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-section h2{
+            text-align: center;
+            color: #578FCA;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p{
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .contact-wrapper{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        form label{
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input, form textarea{
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        form textarea{
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .alert-overlay{
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .alert-box{
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            animation: zoomIn 0.4s ease;
+            max-width: 300px;
+            width: 90%;
+        }
+
+        .alert-box p{
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .alert-box button{
+            padding: 8px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #578FCA;
+            color: white;
+            cursor: pointer;
+        }
+
+        .alert-box button:hover{
+            background: #43a047;
+        }
+
+        @keyframes zoomIn{
+            from{
+                transform: scale(0.7);
+                opacity: 0;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .error{
+            color: #d9534f;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .input-error{
+            border: 2px solid #d9534f;
+            background-color: #fff5f5;
+        }
+
+        .btn-submit{
+            background-color: #578FCA;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover{
+            background-color: #3674B5;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px){
+            .contact-section{
+                padding: 30px;
+            }
+            .contact-wrapper{
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px){
+            .contact-section{
+                padding: 20px;
+                border-radius: 15px;
+            }
+            .btn-submit{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Pop Up -->
+<div id="customAlert" class="alert-overlay">
+    <div class="alert-box">
+        <p id="alertMessage"></p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+</div>
+
+<header>
+    <div class="container">
+        <h1>Wisata Gunung Kidul</h1>
+        <p>Hubungi kami untuk informasi lebih lanjut</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <ul class="nav-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="wisata.html">Wisata</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="kontak.html" class="active">Kontak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <section class="contact-section">
+            <h2>Kontak Kami</h2>
+            <p>Silakan hubungi kami melalui formulir</p>
+
+            <form id="contactForm" novalidate>
+                <label>Nama</label>
+                <input type="text" id="nama">
+                <small class="error" id="errorNama"></small>
+
+                <label>Email</label>
+                <input type="email" id="email">
+                <small class="error" id="errorEmail"></small>
+
+                <label>Pesan</label>
+                <textarea id="pesan"></textarea>
+                <small class="error" id="errorPesan"></small>
+
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+        </section>
+    </div>
+</main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>Website ini menyediakan informasi seputar wisata Gunung Kidul.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="wisata.html">Wisata</a></li>
+                        <li><a href="tentang.html">Tentang</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p>Email: wisatagunungkidul@email.id</p>
+                    <p>Telp: +62 812 227 921</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Website Informasi Wisata, Kabupaten Gunung Kidul.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    const form = document.getElementById("contactForm");
+    const nama = document.getElementById("nama");
+    const email = document.getElementById("email");
+    const pesan = document.getElementById("pesan");
+
+    const errorNama = document.getElementById("errorNama");
+    const errorEmail = document.getElementById("errorEmail");
+    const errorPesan = document.getElementById("errorPesan");
+
+    const alertBox = document.getElementById("customAlert");
+    const alertMsg = document.getElementById("alertMessage");
+
+    function showAlert(message){
+        alertMsg.textContent = message;
+        alertBox.style.display = "flex";
+    }
+
+    function closeAlert(){
+        alertBox.style.display = "none";
+    }
+
+    alertBox.addEventListener("click", function(e){
+        if(e.target === alertBox){
+            closeAlert();
+        }
+    });
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+        let valid = true;
+
+        errorNama.textContent = "";
+        errorEmail.textContent = "";
+        errorPesan.textContent = "";
+
+        nama.classList.remove("input-error");
+        email.classList.remove("input-error");
+        pesan.classList.remove("input-error");
+
+        if(nama.value.trim() === ""){
+            errorNama.textContent = "Nama wajib diisi";
+            nama.classList.add("input-error");
+            valid = false;
+        }
+
+        if(email.value.trim() === ""){
+            errorEmail.textContent = "Email wajib diisi";
+            email.classList.add("input-error");
+            valid = false;
+        }else if(!email.value.includes("@") || !email.value.includes(".")){
+            errorEmail.textContent = "Email tidak valid";
+            email.classList.add("input-error");
+            valid = false;
+        }
+
+        if(pesan.value.trim() === ""){
+            errorPesan.textContent = "Pesan tidak boleh kosong";
+            pesan.classList.add("input-error");
+            valid = false;
+        }
+
+        if(valid){
+            showAlert("Pesan berhasil dikirim. Terima kasih!");
+            form.reset();
+        }
+    });
+</script>
+
+</body>
+</html>

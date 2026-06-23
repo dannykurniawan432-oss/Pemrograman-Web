@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata - Gunung Kidul</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            min-height: calc(100vh - 400px);
+            padding: 40px 0;
+        }
+
+        .btn-detail {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #578FCA;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-detail:hover {
+            background-color: #5759ca;
+        }   
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 6px solid #578FCA;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #578FCA;
+            margin-bottom: 15px;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;         
+            object-fit: cover;     
+            border-radius: 12px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .detail-info {
+            text-align: justify;
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            
+        }
+
+        .detail-info h4 {
+            color: #578FCA;
+            margin-bottom: 10px;
+        }
+
+        .detail-info p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .indent {
+            margin-left: 20px;
+        }
+
+        /* tablet */
+        @media (max-width: 768px) {
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .card-image {
+                height: 180px;
+            }
+        }
+
+        /* mobile */
+        @media (max-width: 480px) {
+
+            .card {
+                padding: 20px;
+            }
+
+            .card-image {
+                height: 160px;
+            }
+
+            .btn-detail {
+                width: 100%;
+                text-align: center;
+            }
+
+            .detail-info {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Wisata Gunung Kidul</h1>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="wisata.html">Wisata</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main>
+        <div class="container">
+            <section class="content">
+                <div class="card">
+                    <h3>Pantai Sadranan</h3>
+                    <img class="card-image" src="https://www.senangrekreasi.com/wp-content/uploads/2023/08/pantai-sadranan-6.webp" alt="Pantai Sadranan">
+                    <button class="btn-detail" data-target="detail-1">Selengkapnya</button>
+                    <div class="detail-info" id="detail-1">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Pantai Sadranan</em> adalah pantai <strong>berpasir putih</strong> di kawasan Tepus, Gunungkidul, yang terkenal dengan air lautnya yang jernih dan ombak yang relatif tenang.
+                           Tempat ini menjadi favorit untuk snorkeling, bermain kano, menikmati <em>sunrise</em> dan <em>sunset</em>, hingga berkemah. Selain pesona alamnya, Pantai Sadranan juga 
+                           memiliki nilai budaya melalui tradisi <abbr title="Sedekah Lauilaksanakan masyarakat setempat sebagai bentuk syukur atas hasil laut.">Nyadran</abbr>.</p>
+                        
+                        <h4>Alamat :</h4>
+                        <address>
+                            <p>Dusun Pulegundes II, Desa Sidoharjo, Kecamatan Tepus, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+                        
+
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>Tiket Masuk Dewasa : <strong>Rp 10.000</strong></li>
+                            <li>Tiket Masuk Anak : <strong>Rp 5.000</strong></li>
+                            <li>Parkir Motor : <strong>Rp 3.000</strong></li>
+                            <li>Parkir Mobil : <strong>Rp 5.000</strong></li>
+                        </ul>
+
+                        <h4>Jam Operasional :</h4>
+                        <p>Setiap hari, pukul <time>06:00</time> - <time>18:00</time> WIB,
+                           Pengunjung boleh berada di area sekitar pantai lebih malam, namun aktivitas utama berakhir sore hari. Warung dan penginapan sebagian tetap buka malam.</p>
+                        
+                        <h4>Fasilitas yang tersedia :</h4>
+                        <ul>
+                            <li>Area parkir luas</li>
+                            <li>Toilet & kamar bilas</li>
+                            <li>Mushola</li>
+                            <li>Gazebo & tempat duduk bersantai</li>
+                            <li>Warung makan & cafe</li>
+                            <li>
+                                Penyewaan :
+                                <ul>
+                                    <li class="indent">Alat snorkeling</li>
+                                    <li class="indent">Kano</li>
+                                    <li class="indent">Perahu</li>
+                                    <li class="indent">Tikar & payung pantai</li>
+                                </ul>
+                            </li>
+                            <li>Penginapan</li>
+                            <li>Pemandu wisata lokal</li>
+                            <li>Pos kesehatan (musiman)</li>
+                        </ul>
+
+                        <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/wisata-pantai-sadranan/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://www.senangrekreasi.com/wp-content/uploads/2023/08/pantai-sadranan-6.webp"
+                            ><i>gambar - www.senangrekreasi.com</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Goa Jomblang</h3>
+                    <img class="card-image" src="https://shakrankreasi.com/wp-content/uploads/2024/05/jomblang-2-1024x678.jpeg" alt="Goa Jomblang">
+                   <button class="btn-detail" data-target="detail-2">Selengkapnya</button>
+                   <div class="detail-info" id="detail-2">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Goa Jomblang</em> adalah gua vertikal di Gunungkidul yang terbentuk dari runtuhan tanah ribuan tahun lalu, 
+                           menciptakan sebuah sinkhole besar sebagai pintu masuk. Daya tarik utamanya adalah fenomena <strong>“Cahaya Surga”</strong>, 
+                           ketika sinar matahari menembus lubang gua antara pukul <time>10:00</time> - <time>14:00</time> WIB dan menghasilkan pilar cahaya dramatis 
+                           yang menerangi hutan purba di dasar gua. Tempat ini populer untuk aktivitas caving, fotografi, dan eksplorasi geologi.
+                        </p>
+                        
+                        <h4>Alamat:</h4>
+                        <address>
+                        <p>Padukuhan Jetis Wetan, Desa Pacarejo, Kecamatan Semanu, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4>
+                        <p>Sistem berupa paket tur, bukan tiket masuk umum.<br> Paket standar: <strong>Rp 350.000 - Rp 500.000 per orang</strong> ,</br> (termasuk peralatan, pemandu, dan transportasi lokal)</p>
+
+                        <h4>Jam Operasional :</h4>
+                        <p><time>08:00</time> - <time>14:00</time> WIB, Penurunan biasanya dimulai pukul <time>10:00</time> WIB</p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                            <ul>
+                                <li>Area parkir</li>
+                                <li>Toilet & kamar mandi</li>
+                                <li>Gazebo / area istirahat</li>
+                                <li>Warung makan &amp; toko suvenir</li>
+                                <li>Peralatan keselamatan lengkap (helm, boots, harness, headlamp)</li>
+                                <li>Pemandu profesional</li>
+                                <li>Area briefing</li>
+                                <li>Kotak P3K</li>
+                            </ul>
+
+                        <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/goa-jomblang-terbaru/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://shakrankreasi.com/wp-content/uploads/2024/05/jomblang-2-1024x678.jpeg"
+                            ><i>gambar - shakrankreasi.com</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Pantai Jogan</h3>
+                    <img class="card-image" src="https://garasijogja.com/wp-content/uploads/2016/08/pantai-jogan-@petrusarif_gallery.jpg" alt="pantai jogan">
+                    <button class="btn-detail" data-target="detail-3">Selengkapnya</button>
+                    <div class="detail-info" id="detail-3"> 
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Pantai Jogan</em> Pantai Jogan adalah pantai unik di Gunungkidul yang terkenal dengan <strong>air terjun yang langsung jatuh ke laut</strong> — fenomena 
+                           langka yang sulit ditemukan di pantai lain di Indonesia. Pantai ini memiliki garis pantai yang pendek namun memberi kesan privat,
+                           dikelilingi tebing karst, dan menyajikan suasana alami yang masih asri.</p>
+                        
+                        <h4>Alamat:</h4>
+                        <address>
+                        <p>Desa Purwodadi, Kecamatan Tepus, Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+                        
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>Tiket masuk terusan : <strong>Rp 10.000 - 15.000</strong></li>
+                            <li>Parkir motor : <strong>Rp 2.000 - 5.000</strong></li>
+                            <li>Parkir mobil : <strong>Rp 5.000 - 10.000</strong></li>
+                        </ul>
+
+                        <h4>Jam Operasional :</h4>
+                        <p><time>06:00</time> - <time>17:00</time> WIB, Waktu terbaik : pagi atau sore hari, dan musim kemarau.</p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                        <ul>
+                            <li>Parkir</li>
+                            <li>Toilet & mushola</li>
+                            <li>Warung makan</li>
+                            <li>Gazebo &amp; tempat istirahat</li>
+                            <li>Tangga turun ke air terjun</li>
+                            <li>Pemandu lokal</li>
+                            <li>Penyewaan payung/tikar</li>
+                            <li>P3K</li>
+                        </ul>
+                        
+                          <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/liburan-pantai-jogan/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://garasijogja.com/wp-content/uploads/2016/08/pantai-jogan-@petrusarif_gallery.jpg"
+                            ><i>gambar - garasijogja.com</i></a></p>
+
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Pantai Watu Lumbung</h3>
+                    <img class="card-image" src="https://tse1.mm.bing.net/th/id/OIP.Igzf8wIpgYMcO9AGgbIb9AHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="pantai watu lumbung">
+                    <button class="btn-detail" data-target="detail-4">Selengkapnya</button>
+                    <div class="detail-info" id="detail-4">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Pantai Watu Lumbung</em> adalah pantai alami di Balong, Girisubo, Gunungkidul yang terkenal dengan <strong>dua batu karang besar berbentuk lumbung padi</strong>—ikon utama pantai. 
+                           Pantai ini berada di area tebing karst, masih sepi, alami, dan cocok bagi 
+                           wisatawan yang suka spot tersembunyi serta panorama dramatis Samudra Hindia.</p>
+                        
+                        <h4>Alamat :</h4>
+                        <address>
+                        <p>Desa Balong, Girisubo, Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4>
+                        <p>Tidak ada tiket masuk resmi. Wisatawan hanya membayar parkir. Aktivitas tambahan :</p>
+                        <ul>
+                            <li>Snorkeling: <strong>Rp 50.000</strong></li>
+                            <li>Sunset tour / Sunrise trek: <strong>Rp 50.000 - 100.000</strong></li>
+                        </ul>
+
+                        <h4>Jam Operasional :</h4>
+                        <p>Buka setiap hari pukul <time>07:00</time> - <time>17:00</time> WIB. Operasional dapat tutup lebih cepat jika cuaca buruk. </p>
+                        <p>Waktu terbaik datang pukul <time>05:00</time> - <time>08:00</time> WIB untuk menikmati sunrise dan udara sejuk, serta pukul <time>16:00</time> - <time>17:30</time> WIB untuk menikmati sunset. </p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                        <ul>
+                            <li>Toilet umum</li>
+                            <li>Mushola sederhana</li>
+                            <li>Warung makan</li>
+                            <li>Gazebo &amp; tempat duduk</li>
+                            <li>Area parkir luas</li>
+                            <li>Spot foto alami</li>
+                            <li>Sinyal seluler cukup bagus</li>
+                        </ul>
+
+                        <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/pantai-watu-lumbung/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://tse1.mm.bing.net/th/id/OIP.Igzf8wIpgYMcO9AGgbIb9AHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                            ><i>gambar - tsel.mm.bing.net</i></a></p>
+
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Pantai Siung</h3>
+                    <img class="card-image" src="https://www.itrip.id/wp-content/uploads/2021/08/Pantai-Siung-Gunung-Kidul.jpg" alt="pantai siung">
+                    <button class="btn-detail" data-target="detail-5">Selengkapnya</button>
+                    <div class="detail-info" id="detail-5">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Pantai Siung</em> adalah pantai ikonik di Dusun Wates, Desa Purwodadi, Tepus, Gunungkidul yang terkenal dengan <strong>tebing karst 
+                           raksasa</strong> dan menjadi salah satu spot <abbr title="panjat tebing">rock climbing</abbr> terbaik di Indonesia. 
+                           Pantai ini juga menjadi lokasi kejuaraan panjat tebing internasional sejak 1990-an. 
+                           Suasananya alami, bersih, dan cocok untuk wisata petualangan maupun santai.</p>
+                        
+                        <h4>Alamat :</h4>
+                        <address>
+                        <p>Dusun Wates, Desa Purwodadi, Kec. Tepus, Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>HTM : <strong>Rp 10.000</strong> per orang</li>
+                            <li>Parkir motor : <strong>Rp 3.000</strong></li>
+                            <li>Parkir mobil : <strong>Rp 5.000</strong></li>
+                        </ul>
+                        <p><em>(Harga dapat berubah sewaktu-waktu)</em></p> 
+
+                        <h4>Jam Operasional:</h4>
+                        <P><time>06:00</time> - <time>18:00</time> WIB, Camping dan kegiatan khusus bisa sampai malam (dengan izin). Waktu terbaik pagi <time>06:00</time> - <time>09:00</time> WIB dan sore <time>16:00</time> - <time>17:30</time> WIB.</P>
+
+                         <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/liburan-pantai-siung/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://www.itrip.id/wp-content/uploads/2021/08/Pantai-Siung-Gunung-Kidul.jpg"
+                            ><i>gambar - www.itrip.id</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Gunung Purba Nglanggeran</h3>
+                    <img class="card-image" src="https://www.indonesia-tourism.com/yogyakarta/gunungkidul/images/gunung_api_purba_nglanggeran.jpg" alt="gunung api purba nglanggeran">
+                    <button class="btn-detail" data-target="detail-6">Selengkapnya</button>
+                    <div class="detail-info" id="detail-6">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Gunung Api Purba Nglanggeran</em> adalah gunung api yang sudah tidak aktif jutaan tahun lalu, terletak di Desa Nglanggeran, 
+                           Kec. Patuk, Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>. Kawasan ini menawarkan panorama <strong>perbukitan hijau, hamparan sawah, dan formasi batuan vulkanik unik</strong>. 
+                           Cocok untuk pendaki pemula hingga mahir, wisata edukasi, camping, dan fotografi alam.</p>
+                        
+                        <h4>Alamat :</h4>
+                        <address>
+                        <p>Desa Nglanggeran, Kecamatan Patuk, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>Tiket masuk siang : <strong>Rp 15.000</strong></li>
+                            <li>Tiket camping / malam : <strong>Rp 20.000</strong></li>
+                            <li>Tiket sunrise/sunset : <strong>Rp 15.000</strong></li>
+                            <li>Parkir motor : <strong>Rp 3.000</strong></li>
+                            <li>Parkir mobil : <strong>Rp 5.000</strong></li>
+                        </ul>
+
+                        <h4>Jam Operasional :</h4>
+                        <p><time>08:00</time> - <time>17:00</time> WIB untuk kunjungan siang, <em>Camping & sunrise/sunset: buka 24 jam</em></p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                        <ul>
+                            <li>Toilet umum &amp; mushola</li>
+                            <li>Area parkir luas</li>
+                            <li>Warung makan &amp; minuman</li>
+                            <li>Pusat informasi wisata &amp; edukasi</li>
+                            <li>Jalur pendakian terawat</li>
+                            <li>Camping ground &amp; penyewaan peralatan camping</li>
+                            <li>Spot foto menarik</li>
+                            <li>Jasa pemandu wisata</li>
+                            <li>Fasilitas outbound</li>
+                            <li>Kotak P3K &amp; petugas medis</li>
+                            <li>Area istirahat (gazebo, bangku)</li>
+                            <li>Homestay &amp; penginapan sederhana</li>
+                        </ul>
+
+                        <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/gunung-api-purba-nglanggeran/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://www.indonesia-tourism.com/yogyakarta/gunungkidul/images/gunung_api_purba_nglanggeran.jpg"
+                            ><i>gambar - www.indonesia-tourism.com</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Air Terjun kedung kandang</h3>
+                    <img class="card-image" src="https://www.mediawisata.id/wp-content/uploads/Air-Terjun-Kedung-Kandang.jpg" alt="air terjun kedung kandang">
+                    <button class="btn-detail" data-target="detail-7">Selengkapnya</button>
+                    <div class="detail-info" id="detail-7">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Air Terjun Kedung Kandang</em> adalah air terjun bertingkat unik yang mengalir <strong>di antara terasering sawah hijau</strong>, 
+                           terletak di kawasan Desa Wisata Nglanggeran, Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>. Keindahannya sering disebut mirip Ubud, Bali, 
+                           dan cocok untuk <em>wisata alam, fotografi, trekking ringan, serta healing dari rutinitas kota.</em></p>
+                        
+                        <h4>Alamat :</h4>
+                        <p>Dusun Nglanggeran, Desa Nglanggeran, Kecamatan Patuk, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>Tiket masuk : <strong>Rp 15.000 - Rp 20.000</strong> / orang</li>
+                            <li>Motor : <strong>Rp 3.000 - Rp 5.000</strong></li>
+                            <li>Mobil : <strong>Rp 5.000 - Rp 10.000</strong></li>
+                        </ul>
+
+                        <h4>Jam Operasional :</h4>
+                        <p><time>08:00</time> - <time>17:00</time> WIB</p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                        <ul>
+                            <li>Toilet umum</li>
+                            <li>Mushola</li>
+                            <li>Area parkir luas</li>
+                            <li>Warung makan &amp; minuman</li>
+                            <li>Jalur trekking aman</li>
+                            <li>Gazebo &amp; area istirahat</li>
+                            <li>Spot foto Instagramable</li>
+                            <li>Area bermain anak</li>
+                            <li>Kotak P3K</li>
+                            <li>Pemandu wisata (opsional)</li>
+                        </ul>
+
+                        <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/air-terjun-kedung-kandang/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://www.mediawisata.id/wp-content/uploads/Air-Terjun-Kedung-Kandang.jpg"
+                            ><i>gambar - www.mediawisata.id</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Goa Pindul</h3>
+                    <img class="card-image" src="https://tse2.mm.bing.net/th/id/OIP.QKVCNqu9NVGVF1_ArESQoAHaEV?rs=1&pid=ImgDetMain&o=7&rm=3" alt="goa pindul">
+                    <button class="btn-detail" data-target="detail-8">Selengkapnya</button>
+                    <div class="detail-info" id="detail-8"> 
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Goa Pindul</em> merupakan destinasi wisata alam unggulan di Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>, yang terkenal dengan
+                           aktivitas <strong>cave tubing menyusuri sungai bawah tanah</strong> menggunakan ban pelampung. Wisata ini menawarkan perpaduan petualangan ringan,
+                           keindahan stalaktit - stalagmit, serta pengalaman eksplorasi alam karst yang aman untuk semua kalangan.</p>
+                        
+                        <h4>Alamat :</h4>
+                        <address>
+                        <p>Desa Bejiharjo, Kecamatan Karangmojo, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>Cave Tubing Dewasa : <strong>Rp75.000 - Rp95.000</strong></li>
+                            <li>Cave Tubing Anak-anak : <strong>Rp50.000 - Rp70.000</strong></li>
+                            <li>Parkir Motor : <strong>Rp5.000</strong></li>
+                            <li>Parkir Mobil : <strong>Rp10.000</strong></li>
+                            <li>Parkir Bus : <strong>±Rp20.000</strong></li>
+                            <li>Loker : <strong>Rp5.000 - Rp10.000</strong></li>
+                        </ul>
+
+                        <h4>Jam Operasional :</h4>
+                        <p>Setiap hari : <time>07:00</time> - <time>17:00</time> WIB, Waktu terbaik : <time>09:00</time> - <time>11:00</time> WIB, Musim kemarau air lebih jernih & aman, Musim hujan tetap buka, tergantung kondisi debit air.</p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                        <ul>
+                            <li>Parkir luas</li>
+                            <li>Toilet umum</li>
+                            <li>Mushola</li>
+                            <li>Loker penyimpanan</li>
+                            <li>Ban pelampung</li>
+                            <li>Jaket pelampung &amp; helm</li>
+                            <li>Pemandu wisata</li>
+                            <li>Pusat informasi</li>
+                            <li>Wifi area parkir</li>
+                            <li>Gazebo &amp; area istirahat</li>
+                            <li>Warung makan &amp; oleh-oleh</li>
+                        </ul>
+
+                        <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/goa-pindul/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://tse2.mm.bing.net/th/id/OIP.QKVCNqu9NVGVF1_ArESQoAHaEV?rs=1&pid=ImgDetMain&o=7&rm=3"
+                            ><i>gambar - tse2.mm.bing.net</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Wisata Sungai Oyo </h3>
+                    <img class="card-image" src="https://travelspromo.com/wp-content/uploads/2022/04/kegiatan-susur-Sungai-Oyo.jpg" alt="sungai oyo">
+                    <button class="btn-detail" data-target="detail-9">Selengkapnya</button>
+                    <div class="detail-info" id="detail-9">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Sungai Oyo</em> merupakan destinasi wisata alam unggulan di Kabupaten Gunungkidul yang menawarkan pengalaman <strong>susur sungai</strong>, 
+                           <strong>tubing</strong>, dan <strong>arung jeram</strong> dengan panorama alam karst yang masih asri. Wisata ini cocok bagi pencinta aktivitas luar 
+                           ruang yang memacu adrenalin sekaligus ingin menikmati keindahan alam Yogyakarta.</p>
+                        
+                        <h4>Alamat :</h4>
+                        <address>
+                        <p>Gelaran II, Desa Bejiharjo, Kecamatan Karangmojo, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>Tiket Masuk : <strong>Gratis</strong></li>
+                            <li>Susur Sungai / River Tubing :±<strong>Rp45.000</strong> / orang</li>
+                            <li>Arung Jeram (Rafting) : ±<strong>Rp100.000</strong> / orang</li>
+                            <li>Parkir Motor : <strong>Rp2.000</strong></li>
+                            <li>Parkir Mobil : <strong>Rp5.000</strong></li>
+                        </ul>
+
+                        <h4>Jam Operasional :</h4>
+                        <p>Setiap hari : <time>07:00</time> - <time>17:00</time> WIB, Waktu terbaik berkunjung: pagi hari, 
+                           Musim kemarau: arus lebih tenang, Musim hujan: arus lebih deras (tetap melalui pengecekan keamanan)</p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                        <ul>
+                            <li>Parkir</li>
+                            <li>Toilet umum</li>
+                            <li>Mushola</li> 
+                            <li>Warung makan &amp; jajanan lokal</li>
+                            <li>Ruang bilas</li>
+                            <li>Pelampung &amp; ban tubing</li>
+                            <li>Pemandu wisata</li>
+                            <li>Peralatan keselamatan (helm, rompi, sepatu air)</li>
+                        </ul>
+
+                         <h4>Sumber :</h4>
+                        <p><a href="https://salsawisata.com/sungai-oyo/"><i>salsawisata.com</i></a></p>
+                        <p><a href="https://travelspromo.com/wp-content/uploads/2022/04/kegiatan-susur-Sungai-Oyo.jpg"
+                            ><i>gambar - travelspromo.com</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Goa Gelatik</h3>
+                    <img class="card-image" src="https://wisato.id/wp-content/uploads/2022/08/Gua-Gelatik-1-696x432.jpg" alt="">
+                    <button class="btn-detail" data-target="detail-10">Selengkapnya</button>
+                    <div class="detail-info" id="detail-10"> 
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Goa Gelatik</em> merupakan destinasi wisata <strong>caving anti-mainstream</strong> di Kabupaten Gunungkidul, yang 
+                           menawarkan pengalaman menjelajahi <strong>lorong goa gelap</strong> dengan <em>stalaktit dan stalagmit alami</em>. Wisata ini cocok 
+                           bagi pencinta petualangan yang ingin merasakan sensasi eksplorasi bawah tanah dengan tantangan ringan hingga menengah.</p>
+                        
+                        <h4>Alamat :</h4>
+                        <address>
+                        <p>Gunungbang, Desa Bejiharjo, Kecamatan Karangmojo, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4 >
+                        <ul>
+                            <li>Tiket Masuk Caving : <strong>Rp30.000 </strong>/ orang</li>
+                            <li>Parkir Motor : <strong>Rp2.000</strong></li>
+                            <li>Parkir Mobil : <strong>Rp5.000</strong></li>
+                            <li>Parkir Minibus : <strong>Rp10.000</strong></li>
+                            <li>Sewa Loker : <strong>Rp2.000</strong></li>
+                        </ul>   
+
+                        <h4>Jam Operasional :</h4>
+                        <p>Setiap hari : <time>08:00</time> - <time>17:00</time> WIB</p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                        <ul>
+                            <li>Parkir luas</li>
+                            <li>Helm &amp; senter</li>
+                            <li>Pemandu wisata</li>
+                            <li>Tabung oksigen (darurat)</li>
+                            <li>Minuman</li>
+                            <li>Plastik pelindung HP</li>
+                            <li>Loker penyimpanan</li>
+                            <li>Jasa penjemputan wisatawan</li>
+                        </ul>
+
+                        <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/wisata-goa-gelatik/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://wisato.id/wp-content/uploads/2022/08/Gua-Gelatik-1-696x432.jpg"
+                            ><i>gambar - wisato.id</i></a></p>
+
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3>Pantai Baron </h3>
+                    <img class="card-image" src="https://3.bp.blogspot.com/-ZU4DpekH87Y/XF75K0OV6MI/AAAAAAAACBY/vM4vWs-x8hUKd_FDZdWwyZbmF1liH_VDgCLcBGAs/s1600/jejak-kenzie_pantai-baron-05.jpg" alt="pantai baron">
+                    <button class="btn-detail" data-target="detail-11">Selengkapnya</button>
+                    <div class="detail-info" id="detail-11">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Pantai Baron</em> merupakan salah satu pantai populer di Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>, yang memiliki keunikan 
+                           berupa <strong>pertemuan air laut dan muara sungai air tawar</strong>. Pantai ini menawarkan panorama perbukitan karst, dermaga nelayan, 
+                           serta wisata kuliner laut segar yang menjadikannya favorit wisata keluarga dan pencinta wisata alam pesisir.</p>
+                        
+                        <h4>Alamat :</h4>
+                        <address>
+                        <p>Desa Kemadang, Kecamatan Tanjungsari, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>Tiket Masuk Kawasan Pantai : <strong>Rp10.000 - Rp15.000</strong>/ orang</li>
+                            <li>Parkir Motor : <strong>Rp2.000 - Rp5.000</strong></li>
+                            <li>Parkir Mobil : <strong>Rp5.000 - Rp10.000</strong></li>
+                            <li>Parkir Bus : ±<strong>Rp20.000</strong></li>
+                        </ul>
+
+                        <h4>Jam Operasional :</h4>
+                        <p>Setiap hari : <time>07:00</time> - <time>18:00</time> WIB, Waktu terbaik berkunjung: pagi & sore hari, Musim ramai: akhir pekan & libur nasional, Musim sepi: hari kerja di luar liburan.</p>
+                        <h4>Fasilitas yang tersedia :</h4>
+                       <ul>
+                            <li>Parkir luas</li>
+                            <li>Toilet umum</li>
+                            <li>Mushola</li>
+                            <li>Dermaga kecil</li>
+                            <li>Area pelelangan ikan</li>
+                            <li>Warung makan &amp; restoran seafood</li>
+                            <li>Penyewaan tikar &amp; payung pantai</li>
+                            <li>Gazebo &amp; bangku taman</li>
+                            <li>Posko kesehatan</li>
+                            <li>Toko oleh-oleh</li>
+                            <li>Penginapan (homestay &amp; guest house sekitar pantai)</li>
+                        </ul>
+
+                        <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/pantai-baron/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://3.bp.blogspot.com/-ZU4DpekH87Y/XF75K0OV6MI/AAAAAAAACBY/vM4vWs-x8hUKd_FDZdWwyZbmF1liH_VDgCLcBGAs/s1600/jejak-kenzie_pantai-baron-05.jpg"
+                            ><i>gambar - 3.bp.blogspot.com</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Pantai Indrayanti </h3>
+                    <img class="card-image" src="https://bob.kemenparekraf.go.id/wp-content/uploads/2019/10/pantai-indrayanti-gunungkidul.jpg" alt="pantai indrayanti">
+                    <button class="btn-detail" data-target="detail-12">Selengkapnya</button>
+                    <div class="detail-info" id="detail-12">
+
+                        <h4>Deskripsi :</h4>
+                        <p><em>Pantai Indrayanti</em> atau Pantai Pulang Syawal merupakan salah satu pantai pasir putih paling populer di Kabupaten Gunungkidul, 
+                           <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>. Pantai ini menawarkan <strong>pasir putih lembut, air laut jernih, panorama tebing karst</strong>, serta fasilitas wisata yang tertata rapi, 
+                           menjadikannya destinasi favorit untuk liburan keluarga, pasangan, dan wisatawan umum.</p>
+                        
+                        <h4>Alamat:</h4>
+                        <address>
+                        <p>Desa Tepus, Kecamatan Tepus, Kabupaten Gunungkidul, <abbr title="Daerah Istimewa Yogyakarta">DIY</abbr>.</p>
+                        </address>
+
+                        <h4>Harga :</h4>
+                        <ul>
+                            <li>Tiket Masuk Kawasan Pantai : <strong>Rp10.000</strong> (weekday)</li>
+                            <li>Tiket Libur Nasional : <strong>Rp15.000</strong></li>
+                            <li>Parkir Motor : <strong>Rp5.000</strong></li>
+                            <li>Parkir Mobil : <strong>Rp10.000</strong></li>
+                            <li>Parkir Bus : ±<strong>Rp20.000</strong></li>
+                        </ul>
+
+
+                        <h4>Jam Operasional :</h4>
+                        <p>Setiap hari : <time>07:00</time> - <time>18:00</time> WIB, Libur nasional hingga <time>±20.00</time> WIB, Waktu terbaik berkunjung: pagi & sore hari, Musim terbaik: April - Oktober (kemarau).</p>
+
+                        <h4>Fasilitas yang tersedia :</h4>
+                         <ul>
+                            <li>Parkir luas</li>
+                            <li>Toilet umum</li>
+                            <li>Mushola</li>
+                            <li>Gazebo &amp; area duduk</li>
+                            <li>Cafe &amp; restoran</li>
+                            <li>Warung makan seafood</li>
+                            <li>Penyewaan tikar</li>
+                            <li>P3K / pertolongan pertama</li>
+                            <li>Toko oleh-oleh</li>
+                            <li>Penginapan sekitar pantai</li> 
+                        </ul>
+
+                    <h4>Sumber :</h4>
+                        <p><a href="https://wisatago.com/pantai-indrayanti/"><i>wisatago.com</i></a></p>
+                        <p><a href="https://bob.kemenparekraf.go.id/wp-content/uploads/2019/10/pantai-indrayanti-gunungkidul.jpg"
+                            ><i>gambar - bob.kemenparekraf.go.id</i></a></p>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>Website ini menyediakan informasi seputar wisata Gunung Kidul.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="wisata.html">Wisata</a></li>
+                        <li><a href="tentang.html">tentang</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p>Email: wisatagunungkidul@email.id</p>
+                    <p>Telp: +62 812 227 921</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Website Informasi Wisata, Kabupaten Gunung Kidul.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.btn-detail').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.dataset.target;
+
+        document.querySelectorAll('.detail-info').forEach(detail => {
+            if (detail.id !== targetId) {
+                detail.style.display = 'none';
+            }
+        });
+
+        document.querySelectorAll('.btn-detail').forEach(btn => {
+            if (btn !== button) btn.textContent = 'Selengkapnya';
+        });
+
+        const detail = document.getElementById(targetId);
+        const isOpen = detail.style.display === 'block';
+
+        detail.style.display = isOpen ? 'none' : 'block';
+        button.textContent = isOpen ? 'Selengkapnya' : 'Tutup';
+    });
+});
+
+    </script>
+</body>
+</html>
