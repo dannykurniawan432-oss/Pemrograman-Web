@@ -1,260 +1,325 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - Wisata Gunung Kidul</title>
+    <title>Deep Learning</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        main {
-            min-height: calc(100vh - 400px);
-            padding: 60px 0;
-        }
-    
-        .welcome-popup {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-        
-        .popup-content {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-            animation: zoomIn 0.5s ease;
-        }
-        
-        .popup-content button {
-            margin-top: 15px;
-            padding: 10px 25px;
-            background: #578FCA;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            align-items: center;
-        }
-
-        .text-singkat h2 {
-            font-size: 2.6em;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-        .text-singkat p {
-            font-size: 1.1em;
-            line-height: 1.7;
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 14px 36px;
-            background-color: #578FCA;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #3674B5;
-            transform: translateY(-2px);
-        }
-
-        /* Slider */
-        .slider {
-            position: relative;
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .slides {
-            display: flex;
-            width: 500%;
-            height: 100%;
-            animation: slide 20s infinite;
-        }
-
-        .slides img {
-            width: 100%;
-            object-fit: cover;
-        }
-
-        @keyframes slide {
-            0% { margin-left: 0; }
-            20% { margin-left: 0; }
-            25% { margin-left: -100%; }
-            45% { margin-left: -100%; }
-            50% { margin-left: -200%; }
-            70% { margin-left: -200%; }
-            75% { margin-left: -300%; }
-            95% { margin-left: -300%; }
-            100% { margin-left: -400%; }
-        }
-
-        /* tablet */
-        @media (max-width: 768px) {
-
-            .content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .text-singkat h2 {
-                font-size: 2.1em;
-                text-align: center;
-            }
-
-            .text-singkat p {
-                text-align: center;
-            }
-
-            .btn {
-                display: block;
-                text-align: center;
-                margin: auto;
-            }
-
-            .slider {
-                height: 240px;
-            }
-        }
-
-        /* mobile */
-        @media (max-width: 480px) {
-
-            main {
-                padding: 40px 0;
-            }
-
-            .text-singkat h2 {
-                font-size: 1.8em;
-            }
-
-            .text-singkat p {
-                font-size: 1em;
-            }
-
-            .slider {
-                height: 200px;
-                border-radius: 12px;
-            }
-        }
-    </style>
-
 </head>
 <body>
-    <div class="welcome-popup" id="welcomePopup">
-      <div class="popup-content">
-        <h3>Selamat Datang!</h3>
-        <p>Selamat menjelajah wisata terbaik di Gunung Kidul.</p>
-        <button onclick="closeWelcome()">Mulai</button>
-      </div>
-    </div>
-    <header>
-        <div class="container">
-            <h1>Wisata Gunung Kidul</h1>
-            <p>Selamat datang di website kami</p>
+
+    <!-- Bagian Header -->
+    <header class="hero-header">
+        <div class="header-content">
+            <div class="icon">D</div>
+            <h1>Deep Learning</h1>
+            <p>Sub-bidang AI</p>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Beranda</a></li>
-                <li><a href="wisata.html">Wisata</a></li>
-                <li><a href="tentang.html">Tentang</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
+    <!-- Konten Utama -->
+     <main class="container">
+
+        <!-- penjelasan deeplearning -->
+         <section class="card">
+            <h2>Apa itu Deep Learning?</h2>
+            <p>
+                <strong>Deep learning</strong> adalah salah satu cabang dari <em>machine learning</em> yang menggunakan 
+                <abbr title="Artificial Neural Networks">ANN</abbr> untuk meniru cara manusia berpikir dan belajar.
+                Berdasarkan definisi dari <em>International Business Machines</em> (IBM), <strong>deep learning</strong> 
+                adalah bagian dari <em>machine learning</em> yang bekerja dengan <i>artificial neural networks</i> 
+                (jaringan syaraf tiruan), yaitu algoritma yang dirancang untuk meniru cara manusia berpikir dan belajar.
+            </p> <br>
+            <div class="gambar">
+                <img src="https://dicoding-assets.sgp1.cdn.digitaloceanspaces.com/blog/wp-content/uploads/2024/06/BLOG-Aset-2-1-770x404.jpg" 
+                     alt="Perbandingan arsitektur Neural Network dengan satu hidden layer dan Deep Learning dengan multiple hidden layers">
+            </div>
+            <p>
+                <b>Neural network</b> ini berusaha mensimulasikan perilaku otak manusia dan memungkinkannya untuk 
+                "belajar" dari sejumlah data besar. Model <em>deep learning</em> digunakan untuk mengenali pola 
+                kompleks dalam gambar, teks, suara, dan data lainnya guna menghasilkan wawasan dan prediksi yang akurat.
+                Teknologi ini juga mampu <strong>mengotomatiskan tugas</strong> yang biasanya memerlukan kecerdasan 
+                manusia, seperti mendeskripsikan gambar atau menyalin file suara menjadi teks, tanpa campur tangan manusia.
+            </p> <br>
+         </section>
+
+         <!-- Sejarah Deep Larning-->
+         <section class="card-2">
+            <h2>Sejarah Singkat Deep Learning</h2>
+            <p>
+                <strong>Deep learning</strong>, yang saat ini menjadi tulang punggung berbagai inovasi teknologi, 
+                memiliki sejarah panjang yang penuh perkembangan dari penemuan awal hingga kemajuan terkini.
+            </p> <br>
+            <h4>Timeline Evolusi Deep Learning</h4>
+            <ol class="list">
+                <li>
+                    <strong>1965: Awal Mula</strong><br>
+                    Alexey Ivakhnenko dan Viktor Lapa mengembangkan algoritma pembelajaran mendalam pertama 
+                    menggunakan model lapisan dalam dengan fungsi aktivasi <i>polinomial</i>. Ini merupakan langkah 
+                    awal pengembangan jaringan saraf yang mendalam.
+                </li>
+
+                <li>
+                    <strong>1979: Jaringan Konvolusional</strong><br>
+                    Kunihiko Fukushima memperkenalkan <em>jaringan konvolusional</em> pertama, meskipun masih 
+                    menggunakan skema penguatan manual karena teknik <em>backpropagation</em> belum berkembang.
+                </li>
+                
+                <li>
+                    <strong>1985: Revolusi Backpropagation</strong><br>
+                    Geoffrey Hinton, Yann LeCun, dan Ronald Williams memperkenalkan algoritma 
+                    <b>backpropagation</b> yang memungkinkan pelatihan jaringan saraf lebih efisien.
+                </li>
+                
+                <li>
+                    <strong>1989: Penerapan Praktis</strong><br>
+                    Yann LeCun di Bell Labs mengembangkan metode backpropagation untuk mengklasifikasi 
+                    digit tulisan tangan menggunakan dataset <abbr title="Modified National Institute of Standards and Technology">MNIST</abbr>, 
+                    menunjukkan potensi <em>deep learning</em> dalam pengenalan pola.
+                </li>
+                
+                <li>
+                    <strong>1997: Solusi Gradien Menghilang</strong><br>
+                    Pengembangan <abbr title="Long Short-Term Memory">LSTM</abbr> mengatasi masalah 
+                    <em>vanishing gradient</em>, di mana lapisan awal jaringan tidak dapat belajar karena 
+                    sinyal pembelajaran tidak mencapai lapisan tersebut.
+                </li>
+                
+                <li>
+                    <strong>2011-2012: Era Dominasi</strong><br>
+                    Tim yang dipimpin Jürgen Ciresan, Alex Krizhevsky, Ilya Sutskever, dan Geoffrey Hinton 
+                    memenangkan berbagai kompetisi menggunakan arsitektur <em>convolutional neural networks</em>, 
+                    menandai awal dominasi deep learning.
+                </li>
+                
+                <li>
+                    <strong>2012-2014: Ekspansi Industri</strong><br>
+                    Perusahaan teknologi besar seperti Google, Facebook, dan Microsoft mulai mengakuisisi 
+                    startup dan tim riset deep learning, mendorong pertumbuhan pesat dalam penelitian dan 
+                    aplikasi teknologi ini.
+                </li>
+            </ol> <br>
+
+            <p>
+                Perjalanan deep learning dari algoritma sederhana di tahun 1960-an hingga menjadi fondasi 
+                <abbr title="Artificial Intelligence">AI</abbr> modern menunjukkan evolusi teknologi yang 
+                luar biasa, didorong oleh inovasi algoritma dan kemajuan hardware komputer.
+            </p>
+         </section>
+
+         <!-- Cara Kerja Deep Learning-->
+         <section class="card-3">
+            <h2>Cara Kerja Deep Learning</h2>
+            <p>
+                <strong>Deep learning</strong> bekerja dengan meniru cara otak manusia dalam memproses informasi. 
+                Teknologi ini memanfaatkan <em>jaringan saraf tiruan</em> yang dirancang untuk mengenali, 
+                mengklasifikasikan, dan menggambarkan objek dalam data dengan akurasi tinggi.
+            </p>
+            <h4>Komponen Utama Jaringan Saraf</h4>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>Input Layer</h4>
+                    <p>Menerima data awal yang akan diproses oleh jaringan saraf.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Hidden Layers</h4>
+                    <p>Lapisan tersembunyi yang melakukan transformasi dan ekstraksi fitur dari data.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Output Layer</h4>
+                    <p>Menghasilkan hasil akhir berupa klasifikasi atau prediksi.</p>
+                </div>
+            </div>
+            <h4>Proses Pembelajaran</h4>
+            <ol class="list">
+                <li>
+                    <strong>Forward Propagation</strong><br>
+                    Data masuk melalui <em>input layer</em> dan diteruskan ke layer berikutnya. 
+                    Setiap neuron menghitung output berdasarkan <b>bobot (weight)</b> dan <b>bias</b> 
+                    yang diterapkan. Proses berlanjut hingga mencapai <em>output layer</em> yang 
+                    menghasilkan prediksi akhir.
+                </li>
+                <li>
+                    <strong>Backpropagation</strong><br>
+                    Setelah prediksi dibuat, algoritma <em>gradient descent</em> menghitung kesalahan 
+                    antara prediksi dan hasil sebenarnya. Proses bergerak mundur dari output ke input, 
+                    menyesuaikan bobot dan bias di setiap lapisan untuk meminimalkan kesalahan dan 
+                    meningkatkan akurasi model.
+                </li>
+            </ol>
+            <p>
+                Melalui proses iteratif <em>forward propagation</em> dan <em>backpropagation</em>, 
+                jaringan saraf deep learning terus belajar dan meningkatkan kemampuannya dalam 
+                mengenali pola kompleks dari data.
+            </p>
+         </section>
+
+         <!-- Jenis-Jenis Deep Learning-->
+         <section class="card-4">
+            <h2>Jenis-Jenis Deep Learning</h2>
+            <p>
+                Teknologi <strong>deep learning</strong> telah membawa revolusi dalam berbagai bidang, 
+                mulai dari pengenalan suara hingga analisis data medis. Berikut adalah jenis-jenis 
+                algoritma deep learning berdasarkan cara kerja dan aplikasinya.
+            </p>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Jenis Algoritma</th>
+                            <th>Cara Kerja</th>
+                            <th>Aplikasi Utama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Convolutional Neural Networks (CNN)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Menggunakan <em>convolution layer</em> untuk ekstraksi fitur, 
+                                <em>pooling layer</em> untuk reduksi dimensi, dan <em>fully connected layer</em> 
+                                untuk klasifikasi akhir. Dirancang untuk data berbentuk grid seperti gambar.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Pengenalan wajah, deteksi objek, analisis citra medis, pengenalan karakter
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Generative Adversarial Networks (GAN)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Menggunakan dua komponen: <b>Generator</b> menciptakan data palsu dan 
+                                <b>Discriminator</b> membedakan data palsu dari asli. Keduanya saling 
+                                berkompetisi hingga menghasilkan data realistis.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Generasi gambar, video sintetik, deepfake, peningkatan kualitas gambar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Long Short-Term Memory (LSTM)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Varian <abbr title="Recurrent Neural Network">RNN</abbr> dengan memori 
+                                jangka pendek dan panjang. Dapat menyimpan atau membuang informasi dari 
+                                langkah sebelumnya untuk analisis data sekuensial.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Pengenalan ucapan, prediksi deret waktu, komposisi musik, analisis sentimen
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Multilayer Perceptrons (MLP)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Jaringan saraf dasar dengan beberapa lapisan neuron. Menggunakan 
+                                <em>backpropagation</em> untuk melatih model dan mengoreksi kesalahan 
+                                dengan mengadaptasi bobot neuron.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Pengenalan pola, klasifikasi data, sistem terjemahan, pengenalan gambar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Self-Organizing Maps (SOM)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Algoritma <em>unsupervised learning</em> yang mengurangi dimensi data kompleks 
+                                menjadi representasi visual yang lebih mudah dipahami dan mengelompokkan 
+                                data berdasarkan kesamaan fitur.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Visualisasi data kompleks, clustering, analisis data multidimensi
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Recurrent Neural Networks (RNN)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Dirancang untuk data urutan dengan siklus terarah, di mana output dari 
+                                satu langkah menjadi input untuk langkah berikutnya. Memiliki memori 
+                                internal untuk mengingat input sebelumnya.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Pemrosesan bahasa alami, pengenalan tulisan tangan, analisis video
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </section>
+
+         <!-- Contoh Penerapan Deep Learning-->
+         <section class="card-5">
+            <h2>Contoh Penerapan DeepLearning</h2>
+            <p>
+                Teknologi deep learning digunakan untuk memproses dan memahami data dalam berbagai aplikasi yang 
+                meningkatkan efisiensi dan akurasi di banyak sektor. Berikut adalah ringkasan penerapannya:
+            </p>
+            <h4>Aplikasi Deep Learning</h4>
+            <p>Deep learning telah mengubah berbagai industri dengan aplikasi-aplikasi revolusioner:</p>
+            <ul class="list">
+                <li>
+                    <strong>Healthcare</strong>
+                    Diagnosa cepat dari citra medis seperti MRI atau CT scan, serta membantu dalam penemuan obat.
+                </li>
+                <li>
+                    <strong>Customer Service</strong>
+                    Chatbot pintar yang memahami bahasa alami dan meningkatkan pelayanan 24/7 secara otomatis.
+                </li>
+                <li>
+                    <strong>Financial Services</strong>
+                    Deteksi penipuan, penilaian risiko kredit, dan prediksi pasar saham berdasarkan data historis.
+                </li>
+                <li>
+                    <strong>Speech Recognition</strong>
+                    Memahami berbagai aksen dan bahasa, digunakan dalam asisten suara seperti Siri, Alexa, dan Google Assistant.
+                </li>
+                <li>
+                    <strong>Computer Vision</strong>
+                    Deteksi wajah, pengawasan CCTV, pelacakan objek, dan pengenalan atribut visual seperti ekspresi wajah.
+                </li>
+                <li>
+                    <strong>Natural Language Processing (NLP)</strong>
+                    Memahami teks secara mendalam untuk analisis sentimen, chatbot canggih, dan pemrosesan bahasa sosial media.
+                </li>
+                <li>
+                    <strong>Anomaly Detection</strong>
+                    Mengidentifikasi pola tidak biasa dalam data, seperti aktivitas mencurigakan di kamera atau transaksi keuangan.
+                </li>
             </ul>
-        </div>
-    </nav>
+          </section>
 
-    <main>
-        <div class="container">
-            <section class="content">
-                <div class="text-singkat">
-                    <h2>Jelajahi Keindahan Gunung Kidul</h2>
-                    <p>Gunung Kidul menyimpan berbagai destinasi wisata alam yang menakjubkan, mulai dari pantai, gua, hingga perbukitan yang eksotis.</p>
-                    <p>Website ini hadir untuk membantu Anda menemukan tempat wisata terbaik dengan informasi yang jelas dan menarik.</p>
-                    <a href="wisata.html" class="btn">Lihat Wisata</a>
-                </div>
-
-                <div class="slider">
-                    <div class="slides">
-                        <img src="https://shakrankreasi.com/wp-content/uploads/2024/05/jomblang-2-1024x678.jpeg" alt="Gua Jomblang">
-                        <img src="https://www.mediawisata.id/wp-content/uploads/Air-Terjun-Kedung-Kandang.jpg" alt="air terjun kedung kandang">
-                        <img src="https://garasijogja.com/wp-content/uploads/2016/08/pantai-jogan-@petrusarif_gallery.jpg" alt="pantai jogan">
-                        <img src="https://tse1.mm.bing.net/th/id/OIP.Igzf8wIpgYMcO9AGgbIb9AHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="pantai watu lumbung">
-                        <img src="https://www.itrip.id/wp-content/uploads/2021/08/Pantai-Siung-Gunung-Kidul.jpg" alt="pantai siung">
-                    </div>
-                </div>
-            </section>
+          <!-- Sumber dan Referensi-->
+      <section class="card-6">
+        <div class="sumber">
+            <h2>Sumber Konten dan Referensi</h2>
+            <a href="https://www.cloudcomputing.id/pengetahuan-dasar/apa-itu-deep-learning" target="_blank" class="resource">
+                <strong>cloudcomputing.id </strong>
+            </a> <br>
+            <a href="https://prismic.io/blog/css-background-effects" target="_blank" class="resource">
+                <strong>prismic.io</strong>
+            </a> <br>
+            <a href="https://www.dicoding.com/blog/hi-nice-to-know-you-deep-learning/" target="_blank" class="resource">
+               <strong>dicoding.com</strong>
+            </a>
         </div>
-    </main>
+      </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Tentang Kami</h3>
-                    <p>Website ini menyediakan informasi seputar wisata Gunung Kidul.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Link Cepat</h3>
-                    <ul>
-                        <li><a href="index.html">Beranda</a></li>
-                        <li><a href="wisata.html">Wisata</a></li>
-                        <li><a href="tentang.html">Tentang</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Kontak</h3>
-                    <p>Email: wisatagunungkidul@email.id</p>
-                    <p>Telp: +62 812 227 921</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Website Informasi Wisata, Kabupaten Gunung Kidul.</p>
-            </div>
-        </div>
+     </main>
+
+     <footer class="footer">
+        <div class="footer-icon">D</div>
+        <h3>Deep Learning</h3>
+        <p>Tugas cooperative pengantar pemrograman web.</p>
+        <p class="copyright">&copy; 2025 - Kelompok Orion</p>
     </footer>
-    <script>
-        const popup = document.getElementById("welcomePopup");
-        
-        if (localStorage.getItem("welcomeShown")) {
-            popup.style.display = "none";
-        } else {
-            popup.style.display = "flex";
-        }
-    
-        function closeWelcome() {
-            popup.style.display = "none";
-            localStorage.setItem("welcomeShown", "true");
-        }
-    </script>
 
 </body>
 </html>
