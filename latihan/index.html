@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antarmuka Deep Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #00ffe7, #ff00c8);
+      padding: 2rem;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      color: #0f0f0f;
+      box-shadow: 0 0 20px #00ffe7;
+    }
+
+    .intro {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: 2px solid #00ffe7;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff00c8;
+    }
+
+    .card h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe7;
+    }
+
+    .card p {
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #0f0f0f;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Antarmuka Deep Learning</h1>
+    <p>Menjelajahi arsitektur kecerdasan buatan</p>
+  </header>
+
+  <div class="intro">
+    <p>
+      Deep Learning adalah cabang dari kecerdasan buatan yang meniru cara kerja otak manusia melalui jaringan saraf tiruan. Antarmuka ini dirancang untuk memvisualisasikan proses tersebut secara bertahap, mulai dari data mentah yang masuk, pemrosesan melalui lapisan tersembunyi, hingga keluaran akhir berupa prediksi atau klasifikasi. Dengan desain futuristik dan warna neon, halaman ini mengajak pengguna untuk memahami logika di balik teknologi yang semakin mendominasi kehidupan modern.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Lapisan Input</h2>
+      <p>
+        Di tahap awal, sistem menerima data mentah seperti gambar, teks, suara, atau sinyal numerik. Data ini belum memiliki makna bagi mesin, sehingga perlu melalui proses normalisasi, encoding, dan transformasi agar dapat diproses lebih lanjut. Lapisan input adalah gerbang pertama menuju pemahaman mesin terhadap dunia nyata.
+      </p>
+    </div>
+    <div class="card">
+      <h2>Lapisan Tersembunyi</h2>
+      <p>
+        Lapisan tersembunyi terdiri dari neuron-neuron virtual yang saling terhubung dan bekerja secara paralel. Di sinilah fitur-fitur penting diekstraksi, pola-pola kompleks dikenali, dan representasi abstrak dibentuk. Semakin banyak lapisan tersembunyi, semakin dalam pemahaman mesin terhadap data yang diberikan.
+      </p>
+    </div>
+    <div class="card">
+      <h2>Lapisan Output</h2>
+      <p>
+        Setelah melalui proses komputasi yang intensif, sistem menghasilkan keluaran akhir berupa prediksi, klasifikasi, atau keputusan. Contohnya: mengenali wajah, menerjemahkan bahasa, atau menentukan apakah email termasuk spam. Lapisan output adalah hasil akhir dari proses pembelajaran mendalam.
+      </p>
+    </div>
+    <div class="card">
+      <h2>Metode Pelatihan</h2>
+      <p>
+        Deep Learning tidak terjadi secara instan. Model dilatih menggunakan data dan algoritma seperti backpropagation dan gradient descent. Tujuannya adalah meminimalkan kesalahan (loss) dan meningkatkan akurasi. Proses ini membutuhkan iterasi berulang dan sumber daya komputasi yang besar, namun hasilnya bisa sangat powerful.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 NeuralCraft Studio | Desain oleh Danny | Dibuat untuk eksplorasi dan edukasi
+  </footer>
+</body>
+</html>
