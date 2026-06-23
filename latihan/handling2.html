@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .hobi-box {
+            margin-top: 10px;
+            padding: 10px;
+            background : #f1f1f1;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Contoh Penggunaan DOM</h2>
+    <P>
+        Masukkan beberapa hobi anda satu per satu. Setiap kali anda klik tombol
+        <b>Tambah</b>
+        maka hobi akan disimpan lalu ditampilkan dalam daftar.
+    </P>
+    <input type="text" id="inputhobi" placeholder="Masukkan hobi anda">
+    <button id="btnTambah">Tambah</button>
+    <p id="errorMsg" class="error"></p>
+    <h3> Daftar Hobi</h3>
+    <div id="daftarhobi" class="hobi-box"></div>
+
+    <script>
+        // Arrat untuk menyimpan hobi
+        let listHobi = [];
+        const inputHobi = document.getElementById('inputhobi');
+        const btnTambah = document.getElementById('btnTambah');
+        const daftarHobi = document.getElementById('daftarhobi');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // Event klik untuk tombol tambah
+        btnTambah.addEventListener("click", function() {
+            let hobi = inputHobi.value.trim();
+
+            // Validasi : input tidak boleh kosong
+            if (hobi ==="") {
+                errorMsg.textContent = "Hobi tidak boleh kosong!";
+                return;
+            }
+
+            // Hapus error jika valid
+            errorMsg.textContent = "";
+
+            // Simpan hobi ke array
+            listHobi.push(hobi);
+
+            // Reset input
+            inputHobi.value = "";
+
+            //Tampilkan ulang daftar hobi dengan LOOP
+            daftarHobi.innerHTML = ""; 
+
+            for (let i = 0; i < listHobi.length; i++) {
+                daftarHobi.innerHTML += (i + 1) + ". " + listHobi[i] + "<br>";
+            }
+        });
+    </script>
+</body>
+</html>
+</head>
+<body>
+    
+</body>
+</html>
