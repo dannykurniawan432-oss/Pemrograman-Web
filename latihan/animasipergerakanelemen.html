@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Pergerakan Elemen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        #kotak {
+            width: 50px;
+            height: 50px;
+            background: crimson;
+            position: relative;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Animasi Pergerakan Elemen</h2>
+    <p>Klik tombol untuk menggerakkan kotak ke kanan</p>
+    <button id="mulai">Gerakkan</button>
+    <div id="kotak"></div>
+    <script>
+      document.getElementById("mulai").onclick = function () {
+        let box = document.getElementById("kotak");
+        let pos = 0;
+        let animasi = setInterval(function () {
+          if (pos >= 250) {
+            clearInterval(animasi);
+          } else {
+            pos++;
+            box.style.left = pos + "px";
+          }
+        }, 10);
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form & Gambar Responsif + Animasi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1s ease-in;
+      background-color: #ccc; /* animasi saat load */
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .form-container {
+      flex: 1;
+      min-width: 280px;
+      animation: slideLeft 1s ease-out; /* animasi masuk dari kiri */
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      margin-top: 8px;
+      transition: border-color 0.4s, box-shadow 0.4s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #3498db;
+      box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+      outline: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.4s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #16a085;
+      transform: scale(1.05);
+    }
+
+    #pesan {
+      margin-top: 10px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.6s;
+    }
+
+    #pesan.show {
+      animation: bounceIn 0.6s;
+    }
+
+    .image-container {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+      animation: slideRight 1s ease-out; /* animasi masuk dari kanan */
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      transition: transform 0.4s;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Animasi keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    /* Responsif: layar kecil susun ke bawah */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Form Validasi dengan Animasi</h2>
+  <div class="container">
+    <div class="form-container">
+      <label for="nama">Nama:</label><br />
+      <input type="text" id="nama" placeholder="Nama lengkap"><br />
+
+      <label for="umur">Umur:</label><br />
+      <input type="number" id="umur" placeholder="Umur"><br />
+
+      <label for="jk">Jenis Kelamin:</label><br />
+      <select id="jk">
+        <option value="">-- Pilih --</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select><br />
+
+      <label for="alamat">Alamat:</label><br />
+      <textarea id="alamat" rows="3" placeholder="Alamat lengkap"></textarea><br />
+
+      <p id="pesan"></p>
+      <button id="cek">Cek Validasi</button>
+    </div>
+
+    <div class="image-container">
+      <h2>Contoh Gambar</h2>
+      <img src="https://hariannusantara.com/wp-content/uploads/2019/05/gambar-rangkaian-bunga4.jpg"alt="Contoh Gambar">
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("cek").addEventListener("click", function(){
+      let nama = document.getElementById("nama").value;
+      let umur = document.getElementById("umur").value;
+      let jk = document.getElementById("jk").value;
+      let alamat = document.getElementById("alamat").value;
+      let pesan = document.getElementById("pesan");
+
+      if(nama === "" || umur === "" || jk === "" || alamat === ""){
+        pesan.textContent = "Semua field harus diisi!";
+        pesan.style.color = "red";
+      } else {
+        pesan.textContent = "Data valid. Terima kasih!";
+        pesan.style.color = "green";
+      }
+      pesan.style.opacity = "1";
+      pesan.classList.remove("show"); // reset animasi
+      void pesan.offsetWidth;          // trik reflow
+      pesan.classList.add("show");     // jalankan animasi lagi
+    });
+  </script>
+</body>
+</html>

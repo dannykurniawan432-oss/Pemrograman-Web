@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMASI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        input {
+            padding: 10px;
+            width: 250px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.4s, box-shadow 0.4s;
+        }
+        input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+            outline: none;
+        }
+        button{
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.4s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+        }
+        #pesan {
+            margin-top: 10px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <h2>Animasi Pada Form</h2>
+    <p>
+        Contoh animasi saat input difokuskan, hover pada tombol, serta validasi sederhana.
+    </p>
+    <br />
+    <label for="nama">Masukkan Nama:</label><br />
+    <input type ="text" id="nama" placeholder="Nama lengkap"><br />
+    <p id="pesan"></p>
+    <br />
+    <button id="cek">cek validasi</button>
+    <script>
+        document.getElementById("cek").addEventListener("click", function(){
+            let nama = document.getElementById("nama").value;
+            let pesan = document.getElementById("pesan");
+            if(nama === ""){
+                pesan.textContent = "Nama tidak boleh kosong!";
+                pesan.style.color = "red";
+            } else {
+                pesan.textContent = "Data valid. Terima kasih!";
+                pesan.style.color = "green";
+            }
+            pesan.style.opacity = "1";
+        });
+    </script>
+</body>
+</html>
