@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas DOM</title>
+    <style>
+        body{
+            background-color: #AAC4F5;
+            color: rgb(29, 14, 63);
+            margin: auto;
+           
+        }
+
+        #myForm{
+            background-color: #7da3eb;
+            text-align: center;
+            border: 1px solid rgb(124, 149, 231);
+            border-radius: 15px;
+            margin: auto;
+            padding: 15px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #myForm label{
+            text-align: left;
+            
+        }
+
+        #myForm input{
+            border: none;
+            border-radius: 3px;
+            padding-bottom: 15px;
+        }
+
+        #btnHover{
+            background-color: #7deb95;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+
+        }
+
+        #btnHover.hovered{
+            background-color: #df2222;
+        }
+
+        .error{
+            color: red;
+        }
+
+        .succsess{
+            color: rgb(29, 14, 63);
+        }
+
+    </style>
+</head>
+<body>
+    <h1><center>
+        Sign Up
+    </center></h1>
+
+    <form id="myForm">
+
+        <h2>Pendaftaran</h2>
+
+        <label>Nama :</label>
+        <input type="text" id="nama">
+        <span id="namaError" class="error"></span> <br>
+
+        <label>Email :</label>
+        <input type="email" id="email">
+        <span id="emailError" class="error"></span> <br>
+
+        <label>Nomor HP :</label>
+        <input type="number" id="noHp">
+        <span id="noHpError" class="error"></span> <br>
+
+        <label>Buat password :</label>
+        <input type="password" id="password">
+        <span id="passwordError" class="error"></span> <br>
+
+        <button id="btnHover" type="submit">Daftar</button>
+
+        <p id="formSuccsess" class="succsess"></p>
+
+    </form>
+
+    <script>
+        //=== HOVER DAFTAR
+        const btnHover = document.getElementById("btnHover");
+
+        btnHover.addEventListener("mouseover", function (){
+            btnHover.classList.add("hovered");
+        }
+        );
+
+        btnHover.addEventListener("mouseout", function (){
+            btnHover.classList.remove("hovered");
+        }
+        );
+
+        //== VALIDASI FORM
+        const form = document.getElementById("myForm");
+        const nama = document.getElementById("nama");
+        const email = document.getElementById("email");
+        const NoHp = document.getElementById("noHp");
+        const password = document.getElementById("password");
+        const namaError = document.getElementById("namaError");
+        const emailError = document.getElementById("emailError");
+        const noHpError = document.getElementById("noHpError");
+        const passwordError = document.getElementById("passwordError");
+        const formSuccsess = document.getElementById("formSuccsess");
+
+        form.addEventListener("submit", function (e){
+            e.preventDefault();
+            let valid = true;
+
+            //validasi nama
+            if (nama.value.trim()===""){
+                namaError.textContent = "Nama wajib diisi";
+                valid = false;
+            } else {
+                namaError.textContent = "";
+            }
+
+            //validasi email
+            if (email.value.trim()===""){
+                emailError.textContent = "Email wajib diisi";
+                valid = false;
+            }else if(!email.value.includes("@")){
+                emailError.textContent = "Email tidak valid";
+                valid = false;
+            } else{
+                emailError.textContent = "";
+            }
+
+            //validasi no hp
+            if (noHp.value.trim()===""){
+                noHpError.textContent = "Nomor Hp wajib diisi";
+                valid = false;
+            } else{
+                noHpError.textContent = "";
+            }
+
+            //validasi password
+            if (password.value.trim()===""){
+                passwordError.textContent = "Password wajib diisi";
+                valid = false;
+            } else if (password.value.length < 8){
+                passwordError.textContent = "Password minimal 8 karakter";
+                valid = false;
+            } else{
+                passwordError.textContent = "";
+            }
+
+            if (valid) {
+                formSuccsess.textContent = "Pendaftaran telah berhasil!";
+                form.reset();
+            }
+
+        });
+    </script>
+</body>
+</html>
