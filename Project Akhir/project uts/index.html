@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Bagian Header -->
+    <header class="hero-header">
+        <div class="header-content">
+            <div class="icon">D</div>
+            <h1>Deep Learning</h1>
+            <p>Sub-bidang AI</p>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+     <main class="container">
+
+        <!-- penjelasan deeplearning -->
+         <section class="card">
+            <h2>Apa itu Deep Learning?</h2>
+            <p>
+                <strong>Deep learning</strong> adalah salah satu cabang dari <em>machine learning</em> yang menggunakan 
+                <abbr title="Artificial Neural Networks">ANN</abbr> untuk meniru cara manusia berpikir dan belajar.
+                Berdasarkan definisi dari <em>International Business Machines</em> (IBM), <strong>deep learning</strong> 
+                adalah bagian dari <em>machine learning</em> yang bekerja dengan <i>artificial neural networks</i> 
+                (jaringan syaraf tiruan), yaitu algoritma yang dirancang untuk meniru cara manusia berpikir dan belajar.
+            </p> <br>
+            <div class="gambar">
+                <img src="https://dicoding-assets.sgp1.cdn.digitaloceanspaces.com/blog/wp-content/uploads/2024/06/BLOG-Aset-2-1-770x404.jpg" 
+                     alt="Perbandingan arsitektur Neural Network dengan satu hidden layer dan Deep Learning dengan multiple hidden layers">
+            </div>
+            <p>
+                <b>Neural network</b> ini berusaha mensimulasikan perilaku otak manusia dan memungkinkannya untuk 
+                "belajar" dari sejumlah data besar. Model <em>deep learning</em> digunakan untuk mengenali pola 
+                kompleks dalam gambar, teks, suara, dan data lainnya guna menghasilkan wawasan dan prediksi yang akurat.
+                Teknologi ini juga mampu <strong>mengotomatiskan tugas</strong> yang biasanya memerlukan kecerdasan 
+                manusia, seperti mendeskripsikan gambar atau menyalin file suara menjadi teks, tanpa campur tangan manusia.
+            </p> <br>
+         </section>
+
+         <!-- Sejarah Deep Larning-->
+         <section class="card-2">
+            <h2>Sejarah Singkat Deep Learning</h2>
+            <p>
+                <strong>Deep learning</strong>, yang saat ini menjadi tulang punggung berbagai inovasi teknologi, 
+                memiliki sejarah panjang yang penuh perkembangan dari penemuan awal hingga kemajuan terkini.
+            </p> <br>
+            <h4>Timeline Evolusi Deep Learning</h4>
+            <ol class="list">
+                <li>
+                    <strong>1965: Awal Mula</strong><br>
+                    Alexey Ivakhnenko dan Viktor Lapa mengembangkan algoritma pembelajaran mendalam pertama 
+                    menggunakan model lapisan dalam dengan fungsi aktivasi <i>polinomial</i>. Ini merupakan langkah 
+                    awal pengembangan jaringan saraf yang mendalam.
+                </li>
+
+                <li>
+                    <strong>1979: Jaringan Konvolusional</strong><br>
+                    Kunihiko Fukushima memperkenalkan <em>jaringan konvolusional</em> pertama, meskipun masih 
+                    menggunakan skema penguatan manual karena teknik <em>backpropagation</em> belum berkembang.
+                </li>
+                
+                <li>
+                    <strong>1985: Revolusi Backpropagation</strong><br>
+                    Geoffrey Hinton, Yann LeCun, dan Ronald Williams memperkenalkan algoritma 
+                    <b>backpropagation</b> yang memungkinkan pelatihan jaringan saraf lebih efisien.
+                </li>
+                
+                <li>
+                    <strong>1989: Penerapan Praktis</strong><br>
+                    Yann LeCun di Bell Labs mengembangkan metode backpropagation untuk mengklasifikasi 
+                    digit tulisan tangan menggunakan dataset <abbr title="Modified National Institute of Standards and Technology">MNIST</abbr>, 
+                    menunjukkan potensi <em>deep learning</em> dalam pengenalan pola.
+                </li>
+                
+                <li>
+                    <strong>1997: Solusi Gradien Menghilang</strong><br>
+                    Pengembangan <abbr title="Long Short-Term Memory">LSTM</abbr> mengatasi masalah 
+                    <em>vanishing gradient</em>, di mana lapisan awal jaringan tidak dapat belajar karena 
+                    sinyal pembelajaran tidak mencapai lapisan tersebut.
+                </li>
+                
+                <li>
+                    <strong>2011-2012: Era Dominasi</strong><br>
+                    Tim yang dipimpin Jürgen Ciresan, Alex Krizhevsky, Ilya Sutskever, dan Geoffrey Hinton 
+                    memenangkan berbagai kompetisi menggunakan arsitektur <em>convolutional neural networks</em>, 
+                    menandai awal dominasi deep learning.
+                </li>
+                
+                <li>
+                    <strong>2012-2014: Ekspansi Industri</strong><br>
+                    Perusahaan teknologi besar seperti Google, Facebook, dan Microsoft mulai mengakuisisi 
+                    startup dan tim riset deep learning, mendorong pertumbuhan pesat dalam penelitian dan 
+                    aplikasi teknologi ini.
+                </li>
+            </ol> <br>
+
+            <p>
+                Perjalanan deep learning dari algoritma sederhana di tahun 1960-an hingga menjadi fondasi 
+                <abbr title="Artificial Intelligence">AI</abbr> modern menunjukkan evolusi teknologi yang 
+                luar biasa, didorong oleh inovasi algoritma dan kemajuan hardware komputer.
+            </p>
+         </section>
+
+         <!-- Cara Kerja Deep Learning-->
+         <section class="card-3">
+            <h2>Cara Kerja Deep Learning</h2>
+            <p>
+                <strong>Deep learning</strong> bekerja dengan meniru cara otak manusia dalam memproses informasi. 
+                Teknologi ini memanfaatkan <em>jaringan saraf tiruan</em> yang dirancang untuk mengenali, 
+                mengklasifikasikan, dan menggambarkan objek dalam data dengan akurasi tinggi.
+            </p>
+            <h4>Komponen Utama Jaringan Saraf</h4>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>Input Layer</h4>
+                    <p>Menerima data awal yang akan diproses oleh jaringan saraf.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Hidden Layers</h4>
+                    <p>Lapisan tersembunyi yang melakukan transformasi dan ekstraksi fitur dari data.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Output Layer</h4>
+                    <p>Menghasilkan hasil akhir berupa klasifikasi atau prediksi.</p>
+                </div>
+            </div>
+            <h4>Proses Pembelajaran</h4>
+            <ol class="list">
+                <li>
+                    <strong>Forward Propagation</strong><br>
+                    Data masuk melalui <em>input layer</em> dan diteruskan ke layer berikutnya. 
+                    Setiap neuron menghitung output berdasarkan <b>bobot (weight)</b> dan <b>bias</b> 
+                    yang diterapkan. Proses berlanjut hingga mencapai <em>output layer</em> yang 
+                    menghasilkan prediksi akhir.
+                </li>
+                <li>
+                    <strong>Backpropagation</strong><br>
+                    Setelah prediksi dibuat, algoritma <em>gradient descent</em> menghitung kesalahan 
+                    antara prediksi dan hasil sebenarnya. Proses bergerak mundur dari output ke input, 
+                    menyesuaikan bobot dan bias di setiap lapisan untuk meminimalkan kesalahan dan 
+                    meningkatkan akurasi model.
+                </li>
+            </ol>
+            <p>
+                Melalui proses iteratif <em>forward propagation</em> dan <em>backpropagation</em>, 
+                jaringan saraf deep learning terus belajar dan meningkatkan kemampuannya dalam 
+                mengenali pola kompleks dari data.
+            </p>
+         </section>
+
+         <!-- Jenis-Jenis Deep Learning-->
+         <section class="card-4">
+            <h2>Jenis-Jenis Deep Learning</h2>
+            <p>
+                Teknologi <strong>deep learning</strong> telah membawa revolusi dalam berbagai bidang, 
+                mulai dari pengenalan suara hingga analisis data medis. Berikut adalah jenis-jenis 
+                algoritma deep learning berdasarkan cara kerja dan aplikasinya.
+            </p>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Jenis Algoritma</th>
+                            <th>Cara Kerja</th>
+                            <th>Aplikasi Utama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Convolutional Neural Networks (CNN)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Menggunakan <em>convolution layer</em> untuk ekstraksi fitur, 
+                                <em>pooling layer</em> untuk reduksi dimensi, dan <em>fully connected layer</em> 
+                                untuk klasifikasi akhir. Dirancang untuk data berbentuk grid seperti gambar.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Pengenalan wajah, deteksi objek, analisis citra medis, pengenalan karakter
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Generative Adversarial Networks (GAN)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Menggunakan dua komponen: <b>Generator</b> menciptakan data palsu dan 
+                                <b>Discriminator</b> membedakan data palsu dari asli. Keduanya saling 
+                                berkompetisi hingga menghasilkan data realistis.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Generasi gambar, video sintetik, deepfake, peningkatan kualitas gambar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Long Short-Term Memory (LSTM)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Varian <abbr title="Recurrent Neural Network">RNN</abbr> dengan memori 
+                                jangka pendek dan panjang. Dapat menyimpan atau membuang informasi dari 
+                                langkah sebelumnya untuk analisis data sekuensial.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Pengenalan ucapan, prediksi deret waktu, komposisi musik, analisis sentimen
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Multilayer Perceptrons (MLP)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Jaringan saraf dasar dengan beberapa lapisan neuron. Menggunakan 
+                                <em>backpropagation</em> untuk melatih model dan mengoreksi kesalahan 
+                                dengan mengadaptasi bobot neuron.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Pengenalan pola, klasifikasi data, sistem terjemahan, pengenalan gambar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Self-Organizing Maps (SOM)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Algoritma <em>unsupervised learning</em> yang mengurangi dimensi data kompleks 
+                                menjadi representasi visual yang lebih mudah dipahami dan mengelompokkan 
+                                data berdasarkan kesamaan fitur.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Visualisasi data kompleks, clustering, analisis data multidimensi
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Jenis Algoritma">
+                                <strong>Recurrent Neural Networks (RNN)</strong>
+                            </td>
+                            <td data-label="Cara Kerja">
+                                Dirancang untuk data urutan dengan siklus terarah, di mana output dari 
+                                satu langkah menjadi input untuk langkah berikutnya. Memiliki memori 
+                                internal untuk mengingat input sebelumnya.
+                            </td>
+                            <td data-label="Aplikasi Utama">
+                                Pemrosesan bahasa alami, pengenalan tulisan tangan, analisis video
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </section>
+
+         <!-- Contoh Penerapan Deep Learning-->
+         <section class="card-5">
+            <h2>Contoh Penerapan DeepLearning</h2>
+            <p>
+                Teknologi deep learning digunakan untuk memproses dan memahami data dalam berbagai aplikasi yang 
+                meningkatkan efisiensi dan akurasi di banyak sektor. Berikut adalah ringkasan penerapannya:
+            </p>
+            <h4>Aplikasi Deep Learning</h4>
+            <p>Deep learning telah mengubah berbagai industri dengan aplikasi-aplikasi revolusioner:</p>
+            <ul class="list">
+                <li>
+                    <strong>Healthcare</strong>
+                    Diagnosa cepat dari citra medis seperti MRI atau CT scan, serta membantu dalam penemuan obat.
+                </li>
+                <li>
+                    <strong>Customer Service</strong>
+                    Chatbot pintar yang memahami bahasa alami dan meningkatkan pelayanan 24/7 secara otomatis.
+                </li>
+                <li>
+                    <strong>Financial Services</strong>
+                    Deteksi penipuan, penilaian risiko kredit, dan prediksi pasar saham berdasarkan data historis.
+                </li>
+                <li>
+                    <strong>Speech Recognition</strong>
+                    Memahami berbagai aksen dan bahasa, digunakan dalam asisten suara seperti Siri, Alexa, dan Google Assistant.
+                </li>
+                <li>
+                    <strong>Computer Vision</strong>
+                    Deteksi wajah, pengawasan CCTV, pelacakan objek, dan pengenalan atribut visual seperti ekspresi wajah.
+                </li>
+                <li>
+                    <strong>Natural Language Processing (NLP)</strong>
+                    Memahami teks secara mendalam untuk analisis sentimen, chatbot canggih, dan pemrosesan bahasa sosial media.
+                </li>
+                <li>
+                    <strong>Anomaly Detection</strong>
+                    Mengidentifikasi pola tidak biasa dalam data, seperti aktivitas mencurigakan di kamera atau transaksi keuangan.
+                </li>
+            </ul>
+          </section>
+
+          <!-- Sumber dan Referensi-->
+      <section class="card-6">
+        <div class="sumber">
+            <h2>Sumber Konten dan Referensi</h2>
+            <a href="https://www.cloudcomputing.id/pengetahuan-dasar/apa-itu-deep-learning" target="_blank" class="resource">
+                <strong>cloudcomputing.id </strong>
+            </a> <br>
+            <a href="https://prismic.io/blog/css-background-effects" target="_blank" class="resource">
+                <strong>prismic.io</strong>
+            </a> <br>
+            <a href="https://www.dicoding.com/blog/hi-nice-to-know-you-deep-learning/" target="_blank" class="resource">
+               <strong>dicoding.com</strong>
+            </a>
+        </div>
+      </section>
+
+     </main>
+
+     <footer class="footer">
+        <div class="footer-icon">D</div>
+        <h3>Deep Learning</h3>
+        <p>Tugas cooperative pengantar pemrograman web.</p>
+        <p class="copyright">&copy; 2025 - Kelompok Orion</p>
+    </footer>
+
+</body>
+</html>
