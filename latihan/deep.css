@@ -1,0 +1,132 @@
+/* Reset sederhana */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f4f7fb;
+  color: #333;
+}
+
+/* Header */
+.site-header {
+  background: #1e3a8a; /* biru gelap */
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+.site-header h1 {
+  margin: 0;
+}
+.lead {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Card dengan shadow */
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+.card-shadow {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Box demo: margin & padding */
+.outer-box {
+  background: #dbeafe;
+  padding: 30px; /* padding luar */
+  margin: 15px 0;
+  border-radius: 10px;
+}
+.inner-box {
+  background: #93c5fd;
+  padding: 15px; /* padding dalam */
+  border-radius: 6px;
+}
+
+/* Border demo */
+.border-demo .badge {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.border-demo .rounded {
+  display: inline-block;
+  background: #60a5fa;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Overflow demo */
+.overflow-box {
+  width: 100%;
+  max-height: 120px;
+  overflow: auto;
+  background: #fef9c3;
+  border: 1px solid #facc15;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* Flexbox demo */
+.flex-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.flex-item {
+  flex: 1;
+  background: #34d399;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Inline-block demo */
+.inline-row .pill {
+  display: inline-block;
+  background: #f472b6;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 4px;
+}
+
+/* Catatan */
+.note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Footer */
+.site-footer {
+  background: #1e3a8a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.site-footer a {
+  color: #93c5fd;
+  text-decoration: none;
+}
