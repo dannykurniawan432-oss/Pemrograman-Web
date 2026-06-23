@@ -1,0 +1,114 @@
+/* Font & Reset */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #f9fafb;
+  color: #333;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  color: white;
+}
+.site-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+.site-header .lead {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.hero-img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 12px;
+  border: 4px solid #9333ea;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.hero p {
+  flex: 1;
+  min-width: 280px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+table th {
+  background: #3b82f6;
+  color: white;
+}
+table tr:hover {
+  background: #f3f4f6;
+}
+
+/* Links */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  background: #111827;
+  color: #d1d5db;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+}

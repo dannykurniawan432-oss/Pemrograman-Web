@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Form</title>
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins"/>
+    <style>
+        *{
+            box-sizing: border-box; 
+         }
+        
+        body{
+            font-family : Poppins, sans-serif;
+            background: linear-gradient(to bottom, #1A1A2E, #1A424D);
+            background-repeat : no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: rgb(29, 14, 63);
+            margin: auto;        
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+        }
+
+        .container div {
+            padding: 20px;
+            text-align: center;
+        }
+    
+        h1{
+            color: white;
+            font-size: 45px;
+        }
+
+        .animasi_h1{
+            opacity: 0;
+            transition: opacity 1.2s;
+        }
+
+        #foto{
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+        }
+
+        #foto2{
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+        }
+
+        .animasi_gambar{
+            transform: scale(1.2) skew(2deg);
+
+        }
+
+        .animasi_gambar2{
+            transform: scale(1.2) skew(-2deg);
+
+        }
+
+        #myForm{
+            color: white;
+            background-color: #2C394B;
+            text-align: center;
+            border: 1px solid #526875;
+            border-radius: 15px 0 15px 0 ;
+            margin: auto;
+            padding: 15px;
+            max-width: 650px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #myForm label{
+            font-weight: 500;
+            text-align: left;
+            
+        }
+
+        #myForm input{
+            box-sizing: border-box;
+            height: 30px;
+            padding: 0px 12px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        #btnHover{
+            font-weight: bold;
+            background-color: #E94560;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+
+        }
+
+        #btnHover.hovered{
+            background-color: #c74f63;
+        }
+
+        .error{
+            color: red;
+        }
+
+        .succsess{
+            color: rgba(255, 255, 0, 0.662);
+        }
+
+    </style>
+</head>
+<body>
+    <h1><center>
+        KomikKita
+    </center></h1>
+    <div class="container">
+        <div>
+             <img src="https://tse3.mm.bing.net/th/id/OIP.CN8hiy-Log8HgeofJGC2vAAAAA?pid=ImgDet&w=178&h=254&c=7&dpr=1,5&o=7&rm=3" id="foto" alt="komik_orv">
+        </div>
+
+        <div>
+            <form id="myForm">
+
+            <h2>Sign Up</h2>
+
+            <label>Nama :</label>
+            <input type="text" id="nama">
+            <span id="namaError" class="error"></span> <br>
+
+            <label>Email :</label>
+            <input type="text" id="email">
+            <span id="emailError" class="error"></span> <br>
+
+            <label>Buat password :</label>
+            <input type="password" id="password">
+            <span id="passwordError" class="error"></span> <br>
+
+            <button id="btnHover" type="submit">Daftar</button>
+
+            <p id="formSuccsess" class="succsess"></p>
+
+            </form>
+
+        </div>
+
+        <div>
+            <img src="https://animotaku.fr/wp-content/uploads/2022/09/webtoon-the-beginning-after-the-end-visuel-2.jpeg" id="foto2" alt="">
+        </div>
+    </div>
+   
+    <script>
+
+        //=== ANIMASI GAMBAR
+        const gambar = document.getElementById("foto");
+        const gambar2 = document.getElementById("foto2");
+        
+        gambar.addEventListener("mouseover", function(){
+            gambar.classList.add("animasi_gambar");
+        })
+
+        gambar.addEventListener("mouseout", function(){
+            gambar.classList.remove("animasi_gambar");
+        })
+        
+        gambar2.addEventListener("mouseover", function(){
+            gambar2.classList.add("animasi_gambar2");
+        })
+
+        gambar2.addEventListener("mouseout", function(){
+            gambar2.classList.remove("animasi_gambar2");
+        })
+        
+
+
+        //=== HOVER DAFTAR
+        const btnHover = document.getElementById("btnHover");
+
+        btnHover.addEventListener("mouseover", function (){
+            btnHover.classList.add("hovered");
+        }
+        );
+
+        btnHover.addEventListener("mouseout", function (){
+            btnHover.classList.remove("hovered");
+        }
+        );
+
+        //== VALIDASI FORM
+        const form = document.getElementById("myForm");
+        const nama = document.getElementById("nama");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const namaError = document.getElementById("namaError");
+        const emailError = document.getElementById("emailError");
+        const passwordError = document.getElementById("passwordError");
+        const formSuccsess = document.getElementById("formSuccsess");
+
+        form.addEventListener("submit", function (e){
+            e.preventDefault();
+            let valid = true;
+
+            //validasi nama
+            if (nama.value.trim()===""){
+                namaError.textContent = "Nama wajib diisi!";
+                valid = false;
+            } else {
+                namaError.textContent = "";
+            }
+
+            //validasi email
+            if (email.value.trim()===""){
+                emailError.textContent = "Email wajib diisi!";
+                valid = false;
+            }else if(!email.value.includes("@")){
+                emailError.textContent = "Email tidak valid, sertakan(@)!";
+                valid = false;
+            } else{
+                emailError.textContent = "";
+            }
+
+            //validasi password
+            if (password.value.trim()===""){
+                passwordError.textContent = "Password wajib diisi!";
+                valid = false;
+            } else if (password.value.length < 8){
+                passwordError.textContent = "Password minimal 8 karakter!";
+                valid = false;
+            } else{
+                passwordError.textContent = "";
+            }
+
+             if (valid) {
+                formSuccsess.textContent = "Pendaftaran telah berhasil!";
+                form.reset();
+            }
+
+        });
+    </script>
+</body>
+</html>
