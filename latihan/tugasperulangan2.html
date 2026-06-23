@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validasi Angka</title>
+</head>
+<body>
+  <h2>Validasi Angka</h2>
+  <script>
+    let angka = 0;
+
+    while (angka <= 100) {
+      angka = parseInt(prompt("Masukkan angka (lebih dari 100):"));
+      if (angka <= 100) {
+        alert("Angka terlalu kecil! Masukkan lagi:");
+      }
+    }
+
+    document.write("Angka yang dimasukkan: <b>" + angka + "</b>");
+  </script>
+</body>
+</html>

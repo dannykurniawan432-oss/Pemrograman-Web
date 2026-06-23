@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Program Penjumlahan</title>
+</head>
+<body>
+  <h2>Program Penjumlahan</h2>
+
+  <script>
+    let total = 0;
+    let angka;
+
+    // perulangan terus sampai user memasukkan angka 0
+    do {
+      angka = parseInt(prompt("Masukkan angka (0 untuk berhenti):"));
+      if (!isNaN(angka)) {
+        total += angka;
+      } else {
+        alert("Masukkan angka yang valid!");
+      }
+    } while (angka !== 0);
+
+    // hasil ditampilkan ke halaman
+    document.write("Total penjumlahan adalah: <b>" + total + "</b>");
+  </script>
+</body>
+</html>
