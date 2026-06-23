@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Wisata Gunung Kidul</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            min-height: calc(100vh - 400px);
+            padding: 60px 0;
+        }
+    
+        .welcome-popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            animation: zoomIn 0.5s ease;
+        }
+        
+        .popup-content button {
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: #578FCA;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .text-singkat h2 {
+            font-size: 2.6em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .text-singkat p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 14px 36px;
+            background-color: #578FCA;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3674B5;
+            transform: translateY(-2px);
+        }
+
+        /* Slider */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .slides {
+            display: flex;
+            width: 500%;
+            height: 100%;
+            animation: slide 20s infinite;
+        }
+
+        .slides img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% { margin-left: 0; }
+            20% { margin-left: 0; }
+            25% { margin-left: -100%; }
+            45% { margin-left: -100%; }
+            50% { margin-left: -200%; }
+            70% { margin-left: -200%; }
+            75% { margin-left: -300%; }
+            95% { margin-left: -300%; }
+            100% { margin-left: -400%; }
+        }
+
+        /* tablet */
+        @media (max-width: 768px) {
+
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .text-singkat h2 {
+                font-size: 2.1em;
+                text-align: center;
+            }
+
+            .text-singkat p {
+                text-align: center;
+            }
+
+            .btn {
+                display: block;
+                text-align: center;
+                margin: auto;
+            }
+
+            .slider {
+                height: 240px;
+            }
+        }
+
+        /* mobile */
+        @media (max-width: 480px) {
+
+            main {
+                padding: 40px 0;
+            }
+
+            .text-singkat h2 {
+                font-size: 1.8em;
+            }
+
+            .text-singkat p {
+                font-size: 1em;
+            }
+
+            .slider {
+                height: 200px;
+                border-radius: 12px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="welcome-popup" id="welcomePopup">
+      <div class="popup-content">
+        <h3>Selamat Datang!</h3>
+        <p>Selamat menjelajah wisata terbaik di Gunung Kidul.</p>
+        <button onclick="closeWelcome()">Mulai</button>
+      </div>
+    </div>
+    <header>
+        <div class="container">
+            <h1>Wisata Gunung Kidul</h1>
+            <p>Selamat datang di website kami</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="wisata.html">Wisata</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content">
+                <div class="text-singkat">
+                    <h2>Jelajahi Keindahan Gunung Kidul</h2>
+                    <p>Gunung Kidul menyimpan berbagai destinasi wisata alam yang menakjubkan, mulai dari pantai, gua, hingga perbukitan yang eksotis.</p>
+                    <p>Website ini hadir untuk membantu Anda menemukan tempat wisata terbaik dengan informasi yang jelas dan menarik.</p>
+                    <a href="wisata.html" class="btn">Lihat Wisata</a>
+                </div>
+
+                <div class="slider">
+                    <div class="slides">
+                        <img src="https://shakrankreasi.com/wp-content/uploads/2024/05/jomblang-2-1024x678.jpeg" alt="Gua Jomblang">
+                        <img src="https://www.mediawisata.id/wp-content/uploads/Air-Terjun-Kedung-Kandang.jpg" alt="air terjun kedung kandang">
+                        <img src="https://garasijogja.com/wp-content/uploads/2016/08/pantai-jogan-@petrusarif_gallery.jpg" alt="pantai jogan">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.Igzf8wIpgYMcO9AGgbIb9AHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="pantai watu lumbung">
+                        <img src="https://www.itrip.id/wp-content/uploads/2021/08/Pantai-Siung-Gunung-Kidul.jpg" alt="pantai siung">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>Website ini menyediakan informasi seputar wisata Gunung Kidul.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="wisata.html">Wisata</a></li>
+                        <li><a href="tentang.html">Tentang</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p>Email: wisatagunungkidul@email.id</p>
+                    <p>Telp: +62 812 227 921</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Website Informasi Wisata, Kabupaten Gunung Kidul.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const popup = document.getElementById("welcomePopup");
+        
+        if (localStorage.getItem("welcomeShown")) {
+            popup.style.display = "none";
+        } else {
+            popup.style.display = "flex";
+        }
+    
+        function closeWelcome() {
+            popup.style.display = "none";
+            localStorage.setItem("welcomeShown", "true");
+        }
+    </script>
+
+</body>
+</html>
