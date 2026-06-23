@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tahun kabisat</h2>
+    <form onsubmit="return checkLeapYear()" method="post">
+        <label for="year">Masukkan Tahun:</label><br>
+        <input type="number" id="year" name="year"><br><br>
+
+        <input type="submit" value="Cek">
+    </form>
+    <script>
+        function checkLeapYear() {
+            const year = document.getElementById('year').value;
+            let isLeapYear = false;
+
+            if (year % 4 === 0) {
+                if (year % 100 === 0) {
+                    if (year % 400 === 0) {
+                        isLeapYear = true;
+                    }
+                } else {
+                    isLeapYear = true;
+                }
+            }
+
+            alert(isLeapYear ? "Tahun " + year + " adalah tahun kabisat." : "Tahun " + year + " bukan tahun kabisat.");
+            return false;
+        }
+    </script>
+</body>
+</html>
