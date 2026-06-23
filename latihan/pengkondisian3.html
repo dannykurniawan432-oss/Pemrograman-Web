@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h2>Contoh If...ELSE IF...ELSE</h2>
+    <script>
+        let suhu = prompt("Berapa suhu ruangan ini?");
+        suhu = parseInt(suhu);
+        
+        if (suhu < 20) {
+            document.write("<p>Suhu " + suhu + "°C, Dingin.</p>");
+        } else if (suhu >= 20 && suhu <= 29) {
+            document.write("<p>Suhu " + suhu + "°C, Sejuk.</p>");
+        } else {
+            document.write("<p>Suhu " + suhu + "°C, Panas.</p>");
+        }
+    </script>
+    
+</body>
+</html>
