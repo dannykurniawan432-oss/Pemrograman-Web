@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Nilai Ujian</h2>
+
+    <script>
+        let nilaiUjian = prompt("Masukkan nilai ujian Anda:");
+        nilaiUjian = parseInt(nilaiUjian);
+
+        if (nilaiUjian >= 85) {
+            document.write("<p>Nilai Anda " + nilaiUjian + ", Predikat: A</p>");
+        } else if (nilaiUjian >= 70) {
+            document.write("<p>Nilai Anda " + nilaiUjian + ", Predikat: B</p>");
+        } else if (nilaiUjian >= 55) {
+            document.write("<p>Nilai Anda " + nilaiUjian + ", Predikat: C</p>");
+        } else if (nilaiUjian >= 40) {
+            document.write("<p>Nilai Anda " + nilaiUjian + ", Predikat: D</p>");
+        } else {
+            document.write("<p>Nilai Anda " + nilaiUjian + ", Predikat: E</p>");
+        }
+    </script>
+</body>
+</html>

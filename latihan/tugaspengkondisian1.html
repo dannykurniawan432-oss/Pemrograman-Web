@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Hitung nilai BMI</h2> 
+    <script>
+        let berat = prompt("Masukkan berat badan (kg):");
+        let tinggi = prompt("Masukkan tinggi badan (m):");
+        berat = parseFloat(berat);
+        tinggi = parseFloat(tinggi);
+        let bmi = berat / (tinggi * tinggi);
+        document.write("<p>Nilai BMI Anda adalah: " + bmi.toFixed(2) + "</p>");
+
+        if (bmi < 18.5) {
+            document.write("<p>Kategori: Kekurangan Berat Badan</p>");
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            document.write("<p>Kategori: Normal (Sehat)</p>");
+        } else if (bmi >= 25 && bmi < 29.9) {
+            document.write("<p>Kategori: Kelebihan Berat Badan</p>");
+        } else {
+            document.write("<p>Kategori: Obesitas</p>");
+        }
+    </script>
+</body>
+</html>
